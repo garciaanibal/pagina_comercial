@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desarrollo Web a Medida</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+{% extends 'base.html.twig' %}
 
-<body class="bg-gray-50 text-gray-800">
-
-    <!-- NAV -->
+{% block nav %}
     <nav class="p-5 bg-white shadow fixed top-0 left-0 w-full z-50">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold">ARGON Digital</h1>
@@ -21,31 +12,25 @@
             </div>
         </div>
     </nav>
+{% endblock %}
 
-    <!-- HERO -->
+{% block header %}
     <section class="pt-32 pb-20 text-center container mx-auto">
         <h1 class="text-4xl md:text-6xl font-extrabold">
             Desarrollo de <span class="text-blue-600">Sistemas Web</span> a Medida
         </h1>
-
         <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
             Creo aplicaciones web rápidas, seguras y diseñadas para las necesidades reales de tu negocio.
-            Trabajo con Symfony, Laravel, MySQL, MariaDB y Tailwind.
         </p>
-
         <div class="mt-8 space-x-4">
-            <a href="#contacto"
-               class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
-                Solicitar presupuesto
-            </a>
-            <a href="#proyectos"
-               class="px-6 py-3 bg-gray-200 rounded-lg hover:bg-gray-300">
-                Ver proyectos
-            </a>
+            <a href="#contacto" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">Solicitar presupuesto</a>
+            <a href="#proyectos" class="px-6 py-3 bg-gray-200 rounded-lg hover:bg-gray-300">Ver proyectos</a>
         </div>
     </section>
+{% endblock %}
 
-    <!-- SERVICIOS -->
+{% block body %}
+    {# Aquí van Servicios, Proyectos y Tecnologías #}
     <section id="servicios" class="py-20 bg-white">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold">Servicios</h2>
@@ -78,7 +63,6 @@
         </div>
     </section>
 
-    <!-- PROYECTOS -->
     <section id="proyectos" class="py-20 container mx-auto">
         <h2 class="text-3xl font-bold text-center">Proyectos</h2>
         <p class="text-gray-600 text-center mt-2">Algunos de mis trabajos reales</p>
@@ -110,7 +94,6 @@
         </div>
     </section>
 
-    <!-- TECNOLOGÍAS -->
     <section id="tecnologias" class="py-20 bg-gray-100">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold">Tecnologías</h2>
@@ -128,7 +111,6 @@
         </div>
     </section>
 
-    <!-- CONTACTO -->
     <section id="contacto" class="py-20 container mx-auto">
         <h2 class="text-3xl font-bold text-center">Contacto</h2>
         <p class="text-gray-600 text-center mt-2">Enviame tu consulta y te respondo a la brevedad</p>
@@ -148,11 +130,68 @@
             </button>
         </form>
     </section>
+{% endblock %}
 
-    <!-- FOOTER -->
-    <footer class="py-6 bg-gray-900 text-center text-white">
-        © 2025 ARGON Digital – Desarrollo Web a Medida
+{% block footer %}
+
+    <footer class="bg-gray-900 text-white py-12 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 text-center md:text-left items-start">
+                
+                {# Columna 1: Logo y Eslogan #}
+                <div class="flex flex-col items-center md:items-start">
+                    <h2 class="text-2xl font-bold text-white mb-4">ARGON <span class="text-blue-500">Digital</span></h2>
+                    <p class="text-gray-400 text-sm max-w-xs">
+                        Transformando ideas en soluciones digitales robustas y escalables. 
+                        Especialista en desarrollo backend y sistemas a medida.
+                    </p>
+                </div>
+
+                {# Columna 2: Redes Sociales #}
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-blue-400">Sígueme</h3>
+                    <div class="flex justify-center md:justify-start space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <span class="sr-only">LinkedIn</span>
+                            <span class="text-sm font-medium">LinkedIn</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <span class="sr-only">GitHub</span>
+                            <span class="text-sm font-medium">GitHub</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <span class="sr-only">Instagram</span>
+                            <span class="text-sm font-medium">Instagram</span>
+                        </a>
+                    </div>
+                </div>
+
+                {# Columna 3: Localización y Contacto #}
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-blue-400">Contacto</h3>
+                    <ul class="text-gray-400 space-y-4 text-sm">
+                        <li class="flex items-center justify-center md:justify-start">
+                            <span class="mr-3">📍</span> 
+                            Resistencia, Chaco, Argentina
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start">
+                            <span class="mr-3">📞</span> 
+                            +54 362 400-0000
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start">
+                            <span class="mr-3">✉️</span> 
+                            hola@argondigital.com
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            {# Línea de separación y Copyright #}
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-xs tracking-wider italic">
+                &copy; {{ "now"|date("Y") }} ARGON Digital. Todos los derechos reservados.
+            </div>
+        </div>
     </footer>
 
-</body>
-</html>
+{% endblock %}
