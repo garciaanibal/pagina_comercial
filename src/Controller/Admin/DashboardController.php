@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Tecnologia;
 use App\Entity\User;
 use Symfony\Component\HttpFoundation\Response;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -31,6 +32,7 @@ class DashboardController extends AbstractDashboardController
         
         if ($this->isGranted('ROLE_SUPER_ADMIN')) {
             yield MenuItem::section('Super Admin');
+            yield MenuItem::linkToCrud('Tecnologias', 'fa fa-users', Tecnologia::class);
             yield MenuItem::linkToCrud('Usuarios', 'fa fa-users', User::class);
         }
       
