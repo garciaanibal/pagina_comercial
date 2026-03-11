@@ -1,0 +1,12 @@
+vich_uploader:
+    db_driver: orm
+    mappings:
+        proyectos_portada:
+            uri_prefix: /uploads/proyectos/portadas
+            upload_destination: '%kernel.project_dir%/public/uploads/proyectos/portadas'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        proyectos_galeria:
+            uri_prefix: /uploads/proyectos/galeria
+            upload_destination: '%kernel.project_dir%/public/uploads/proyectos/galeria'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
