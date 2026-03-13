@@ -29,13 +29,13 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        
+
         if ($this->isGranted('ROLE_SUPER_ADMIN')) {
             yield MenuItem::section('Super Admin');
             yield MenuItem::linkToCrud('Tecnologias', 'fa fa-users', Tecnologia::class);
             yield MenuItem::linkToCrud('Usuarios', 'fa fa-users', User::class);
         }
-      
+
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
 }

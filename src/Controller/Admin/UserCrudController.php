@@ -13,7 +13,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class UserCrudController extends AbstractCrudController
 {
-    public function __construct(private array $roles, private array $rolesComplete)
+    public function __construct(private readonly array $roles, private readonly array $rolesComplete)
     {
     }
     

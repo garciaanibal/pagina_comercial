@@ -1,5 +1,5 @@
 # Usa la imagen de PHP
-FROM phpdockerio/php:8.1-fpm
+FROM phpdockerio/php:8.2-fpm
 
 # Establece el directorio de trabajo
 WORKDIR "/application"
@@ -8,7 +8,8 @@ WORKDIR "/application"
 RUN apt-get update; \
     apt-get -y --no-install-recommends install \
         git \ 
-        php8.1-mysql php8.1-gd php8.1-intl \
+        php8.2-mysql php8.2-gd php8.2-intl \
+        php8.2-xml php8.2-mbstring \ 
         curl \
         ca-certificates \
         xz-utils; \
